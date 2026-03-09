@@ -14,6 +14,20 @@ export interface Type extends NamedAPIResource { }
 export interface Ability extends NamedAPIResource { }
 export interface Stat extends NamedAPIResource { }
 
+export interface PokemonInteraction {
+    pokemon: NamedAPIResource;
+    slot?: number;
+    is_hidden?: boolean;
+}
+
+export interface TypeDetail extends Type {
+    pokemon: PokemonInteraction[];
+}
+
+export interface AbilityDetail extends Ability {
+    pokemon: PokemonInteraction[];
+}
+
 export interface PokemonType {
     slot: number;
     type: Type;

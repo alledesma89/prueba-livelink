@@ -6,7 +6,7 @@ export const usePokemonList = () => {
     return useQuery<Pokemon[], Error>({
         queryKey: ['pokemonList'],
         queryFn: async () => {
-            const listResponse = await getPokemonList({ limit: 20 });
+            const listResponse = await getPokemonList({ limit: 151 });
             const detailedPokemon = await Promise.all(
                 listResponse.results.map(({ name }) => getPokemonDetail(name))
             );
